@@ -1,5 +1,4 @@
 const express = require('express');
-
 const {
   getTimeSpentByUserAndBook,
   saveTimeSpent,
@@ -16,16 +15,5 @@ router.post('/:userId/:bookId/:courseId', saveTimeSpent);  // Save time spent on
 router.get('/', getAllTimeSpent);  // Get all time spent data
 router.get('/:userId', getTotalTimeSpentByUser);  // Get total time spent by a user (across all books)
 router.delete('/:userId', deleteUserTimeSpent);  // Delete all time spent by a user
-const { getTimeSpent, saveTimeSpent, getAllTimeSpent } = require('../controllers/timeController');
-
-
-// Get time spent for a specific user and book
-router.get('/:userId/:bookId', getTimeSpent);
-
-// Save or update time spent
-router.post('/:userId/:bookId', saveTimeSpent);
-
-// Get all time spent data
-router.get('/', getAllTimeSpent);
 
 module.exports = router;
